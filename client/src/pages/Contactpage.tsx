@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import contactdetailsimg from '../IMG/contactdetailsimg.png'
 // import { useNavigate } from 'react-router-dom';
 
 const Contactpage = ({id}:any) => {
@@ -36,8 +37,12 @@ const Contactpage = ({id}:any) => {
         <div className='w-[20%]'>
             <Navbar/>
         </div>
-        <div className='w-[80%] flex justify-center items-center'>
-        <div className='flex flex-wrap gap-5 border border-black p-5 w-[700px]'>
+        <div className='w-[80%] flex justify-center items-center flex-col'>
+        <div className='flex justify-center items-center'>
+            <h1 className='font-semibold text-3xl'>Contact Details</h1>
+            <img className='w-[150px] h-[150px]' src={contactdetailsimg} alt="" />
+        </div>
+        <div className='flex flex-wrap gap-5 p-5 w-[700px]'>
         {data.map((item:any)=>{
             return (
                 <>
