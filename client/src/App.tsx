@@ -5,12 +5,13 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
 } from "react-router-dom";
 import Contactpage from './pages/Contactpage';
 import Updateform from './pages/Updateform';
 import Deletecontact from './pages/Deletecontact';
+import Chart from './pages/Chart';
+import Countrydetails from './pages/Countrydetails';
+import Maps from './pages/Maps';
 
 const queryClient = new QueryClient({});
 
@@ -30,6 +31,18 @@ const router = createBrowserRouter([
   {
     path:'/deletecontact/:id',
     element:<Deletecontact/>
+  },
+  {
+    path:'/charts',
+    element:<Chart/>
+  },
+  {
+    path:'/countrydetails/:id',
+    element:<Countrydetails/>
+  },
+  {
+    path:'/maps/:id',
+    element:<Maps/>
   }
 ])
 
