@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import updateimg from '../IMG/updateimg.png'
 
 const Updateform = () => {
 
@@ -55,61 +56,65 @@ const Updateform = () => {
 
   return (
     <div className='flex justify-between w-[100vw] items-center h-screen'>
-        <div className='w-[20%] border border-black h-[100vh]'>
+        <div className='w-[20%] h-[100vh]'>
             <Navbar/>
         </div>
-        <div className='w-[80%] border border-black h-[100vh] flex justify-center items-center '>
+        <div className='w-[80%] h-[100vh] flex justify-center items-center '>
           <div className='border border-black px-5 py-10 rounded-2xl flex justify-center items-center flex-col gap-5'>
-            <div>
-              <h1 className='text-2xl font-semibold'>Update Contact</h1>
+            <div className='flex justify-center items-center gap-2'>
+              <h1 className='text-3xl font-semibold'>Update Contact</h1>
+              <img className='w-[160px] h-[150px]' src={updateimg} alt="" />
             </div>
             <form action="">
-              <div>
-                <label htmlFor="firstname">Firstname</label>
-                <input 
-                type="text" 
-                name="firstname"
-                value={firstname} 
-                onChange={onChangeFirstname}
-                />
-              </div>
-              <div>
-                <label htmlFor="lastname">Lastname</label>
-                <input 
-                type="text" 
-                name="lastname"
-                value={lastname}
-                onChange={onChangeLastname} 
-                />
-              </div>
-              <div>
-                <label htmlFor="state">Status</label>
-                <div>
-                  <label htmlFor="active">active</label>
+              <div className='flex flex-col gap-5'>
+                <div className='flex gap-2 items-baseline'>
+                  <label htmlFor="firstname">Firstname</label>
                   <input 
-                  type="radio" 
-                  name="state"
-                  value="active"
-                  checked={state === "active"}
-                  onChange={onClickRadio} 
+                  className='border-b-2 border-black'
+                  type="text" 
+                  name="firstname"
+                  value={firstname} 
+                  onChange={onChangeFirstname}
                   />
                 </div>
-                <div>
-                  <label htmlFor="inactive">inactive</label>
+                <div className='flex gap-2 items-baseline'>
+                  <label htmlFor="lastname">Lastname</label>
                   <input 
-                  type="radio" 
-                  name='state' 
-                  value="inactive"
-                  checked={state === "inactive"}
-                  onChange={onClickRadio}
+                  className='border-b-2 border-black'
+                  type="text" 
+                  name="lastname"
+                  value={lastname}
+                  onChange={onChangeLastname} 
                   />
+                </div>
+                <div className='flex gap-3'>
+                  <label htmlFor="state">Status</label>
+                  <div className='flex flex-col gap-3'>
+                    <div className='flex justify-center items-center gap-1'>
+                      <label htmlFor="active">active</label>
+                      <input 
+                      type="radio" 
+                      name="state"
+                      value="active"
+                      checked={state === "active"}
+                      onChange={onClickRadio} 
+                      />
+                    </div>
+                    <div className='flex justify-center items-center gap-1'>
+                      <label htmlFor="inactive">inactive</label>
+                      <input 
+                      type="radio" 
+                      name='state' 
+                      value="inactive"
+                      checked={state === "inactive"}
+                      onChange={onClickRadio}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </form>
-            <button onClick={onUpdateContact}>Submit</button>
-            <h1>The radio button value is: {state}</h1>
-            <h1>{firstname}</h1>
-            <h1>{lastname}</h1>
+            <button className='border border-black py-2 px-10 rounded-lg font-semibold mt-3' onClick={onUpdateContact}>Submit</button>
           </div>
         </div>
     </div>
