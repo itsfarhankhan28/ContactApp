@@ -29,7 +29,7 @@ function App() {
             <div className="flex items-center gap-16 my-4">
             {/* logo */}
               <div>
-                <h1 className="text-3xl font-semibold font-herofont">Fk</h1>
+                <h1 className="text-3xl font-semibold font-herofont">ContactSphere</h1>
               </div>
               {/* primary */}
               <div className="hidden lg:flex gap-10 absolute right-[10%]">
