@@ -34,7 +34,7 @@ function App() {
               {/* primary */}
               <div className="hidden lg:flex gap-10 absolute right-[10%]">
               <a href="/" className="text-xl font-herofont cursor-pointer"><h1>Home</h1></a>
-              <a href='/contactdetails' className=" text-xl font-herofont cursor-pointer "><h1>Contact Details</h1></a>
+              <a href='/contactpage' className=" text-xl font-herofont cursor-pointer "><h1>Contact Details</h1></a>
               <a href='/charts' className=" text-xl font-herofont  cursor-pointer">Charts and Maps</a>
               </div>
             </div>
