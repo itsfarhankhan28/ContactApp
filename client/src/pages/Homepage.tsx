@@ -27,7 +27,7 @@ const Homepage = () => {
     e.preventDefault()
 
     const contact = {firstname , lastname , state}
-    const res = await fetch('http://localhost:4000/contact/create',{
+    const res = await fetch('https://contactappbackend-7fsw.onrender.com/contact/create',{
       method:"POST",
       headers:{
         "Content-Type":"application/json"

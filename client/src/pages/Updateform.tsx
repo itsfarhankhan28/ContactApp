@@ -32,7 +32,7 @@ const Updateform = () => {
     e.preventDefault()
 
     const contact = {firstname , lastname , state}
-    const res = await fetch(`http://localhost:4000/contact/update/${id.id}`,{
+    const res = await fetch(`https://contactappbackend-7fsw.onrender.com/contact/update/${id.id}`,{
       method:"PUT",
       headers:{
         "Content-Type":"application/json"

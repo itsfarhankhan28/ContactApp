@@ -18,7 +18,7 @@ const Contactpage = ({id}:any) => {
     const {isLoading, isError , data , error}:any = useQuery(
         "Contact",
         async()=>{
-            const res = await axios.get('http://localhost:4000/contact/get')
+            const res = await axios.get('https://contactappbackend-7fsw.onrender.com/contact/get')
             return res.data
         }
     )

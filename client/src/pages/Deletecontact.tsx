@@ -9,7 +9,7 @@ const Deletecontact = () => {
     const navigatetocontact = useNavigate()
 
     const onDeletecontact = async()=>{
-        const deleteval = await fetch(`http://localhost:4000/contact/delete/${id.id}`,{
+        const deleteval = await fetch(`https://contactappbackend-7fsw.onrender.com/contact/delete/${id.id}`,{
             method:"DELETE"
         })
         console.log(deleteval)
