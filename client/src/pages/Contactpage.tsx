@@ -33,11 +33,9 @@ const Contactpage = ({id}:any) => {
 
   return (
     <>
-    <div className='flex justify-between w-[100vw] h-screen'>
-        <div className='w-[20%]'>
-            <Navbar/>
-        </div>
-        <div className='w-[80%] flex justify-center items-center flex-col'>
+    <Navbar/>
+    <div className='flex justify-center items-center w-[100vw] h-screen'>
+        <div className='flex justify-center items-center flex-col'>
         <div className='flex justify-center items-center'>
             <h1 className='font-semibold text-3xl'>Contact Details</h1>
             <img className='w-[150px] h-[150px]' src={contactdetailsimg} alt="" />
