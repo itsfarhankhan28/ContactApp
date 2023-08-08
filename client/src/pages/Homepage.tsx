@@ -50,15 +50,18 @@ const Homepage = () => {
   }
 
   return (
-    <div className='flex justify-between w-[100vw] items-center h-screen'>
-        <div className='w-[20%] h-[100vh] py-5'>
-            <Navbar/>
-        </div>
-        <div className='w-[80%] h-[100vh] flex justify-center items-center '>
-          <div className='px-5 py-10 rounded-2xl flex justify-center items-center flex-col gap-5 border border-black'>
-            <div className='flex justify-center items-center gap-2'>
+    <>
+    <Navbar/>
+    <div className='flex justify-center items-center w-[100vw] h-screen'>
+        <div className='h-[100vh] flex justify-center items-center '>
+
+          <div className='border-[5px] border-black flex justify-between w-[700px] h-[500px] rounded-3xl p-3'>
+            <div className='w-[40%]'>
+              image
+            </div>
+            <div className='px-5 py-5 rounded-2xl flex flex-col gap-5 w-[60%] bg-[#BAFF66]'>
+            <div>
               <h1 className='text-3xl font-semibold'>Contact Form</h1>
-              <img className='w-[160px] h-[150px]' src={contactimg} alt="" />
             </div>
             <form action="">
               <div className='flex flex-col gap-5'>
@@ -111,8 +114,10 @@ const Homepage = () => {
             </form>
             <button className='border border-black py-2 px-10 rounded-lg font-semibold mt-3' onClick={onSubmitContact}>Submit</button>
           </div>
+          </div>
         </div>
     </div>
+    </>
   )
 }
 
