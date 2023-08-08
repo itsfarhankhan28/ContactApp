@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
-import contactimg from '../IMG/contactimg.png'
+// import contactimg from '../IMG/contactimg.png'
 import {useNavigate} from 'react-router-dom'
+import TextField from '@mui/material/TextField';
+import Checkbox from '@mui/material/Checkbox';
 
 const Homepage = () => {
 
@@ -66,20 +68,24 @@ const Homepage = () => {
             <form action="">
               <div className='flex flex-col gap-5'>
                 <div className='flex gap-2 items-baseline'>
-                  <label htmlFor="firstname">Firstname</label>
-                  <input 
-                  className='border-b-2 border-black'
-                  type="text" 
+                  {/* <label htmlFor="firstname">Firstname</label> */}
+                  <TextField 
+                  className='w-full'
+                  type="text"
+                  variant='standard'
+                  label='Firstname' 
                   name="firstname"
                   value={firstname} 
                   onChange={onChangeFirstname}
                   />
                 </div>
                 <div className='flex gap-2 items-baseline'>
-                  <label htmlFor="lastname">Lastname</label>
-                  <input 
-                  className='border-b-2 border-black'
+                  {/* <label htmlFor="lastname">Lastname</label> */}
+                  <TextField
+                  className='w-full' 
                   type="text" 
+                  variant='standard'
+                  label='Lastname'
                   name="lastname"
                   value={lastname}
                   onChange={onChangeLastname} 
@@ -87,21 +93,21 @@ const Homepage = () => {
                 </div>
                 <div className='flex gap-3'>
                   <label htmlFor="state">Status</label>
-                  <div className='flex flex-col gap-3'>
-                    <div className='flex justify-center items-center gap-1'>
+                  <div className='flex gap-3 justify-center items-center'>
+                    <div className=''>
                       <label htmlFor="active">Active</label>
-                      <input 
-                      type="radio" 
+                      <Checkbox
+                      color='default'  
                       name="state"
                       value="active"
                       checked={state === "active"}
                       onChange={onClickRadio} 
                       />
                     </div>
-                    <div className='flex justify-center items-center gap-1'>
+                    <div className=''>
                       <label htmlFor="inactive">Inactive</label>
-                      <input 
-                      type="radio" 
+                      <Checkbox
+                      color='default'
                       name='state' 
                       value="inactive"
                       checked={state === "inactive"}
@@ -112,7 +118,7 @@ const Homepage = () => {
                 </div>
               </div>
             </form>
-            <button className='border border-black py-2 px-10 rounded-lg font-semibold mt-3' onClick={onSubmitContact}>Submit</button>
+            <button className='bg-black text-white py-2 px-10 rounded-lg font-semibold mt-3' onClick={onSubmitContact}>Submit</button>
           </div>
           </div>
         </div>
