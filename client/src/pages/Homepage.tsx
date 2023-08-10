@@ -4,8 +4,51 @@ import Navbar from '../components/Navbar'
 import {useNavigate} from 'react-router-dom'
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
+import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
+// import { outlinedInputClasses } from '@mui/material/OutlinedInput';
+import contactappimg from '../IMG/contactappimg.png'
+
+
+const customTheme = (outerTheme:any) =>
+  createTheme({
+    palette: {
+      mode: outerTheme.palette.mode,
+    },
+    components: {
+      MuiTextField: {
+        styleOverrides: {
+          root: {
+            '--TextField-brandBorderColor': '#272829',
+            '--TextField-brandBorderHoverColor': '#272829',
+            '--TextField-brandBorderFocusedColor': '#272829',
+            '& label.Mui-focused': {
+              color: 'var(--TextField-brandBorderFocusedColor)',
+            },
+          },
+        },
+      },
+      MuiInput: {
+        styleOverrides: {
+          root: {
+            '&:before': {
+              borderBottom: '2px solid var(--TextField-brandBorderColor)',
+            },
+            '&:hover:not(.Mui-disabled, .Mui-error):before': {
+              borderBottom: '2px solid var(--TextField-brandBorderHoverColor)',
+            },
+            '&.Mui-focused:after': {
+              borderBottom: '2px solid var(--TextField-brandBorderFocusedColor)',
+            },
+          },
+        },
+      },
+    },
+  });
+
 
 const Homepage = () => {
+
+  const outerTheme = useTheme();
 
   const navigatetocontact = useNavigate()
 
@@ -58,8 +101,8 @@ const Homepage = () => {
         <div className='h-[100vh] flex justify-center items-center '>
 
           <div className='border-[5px] border-black flex justify-between w-[700px] h-[500px] rounded-3xl p-3'>
-            <div className='w-[40%]'>
-              image
+            <div className='w-[40%] flex justify-center items-center'>
+              <img src={contactappimg} alt="" />
             </div>
             <div className='px-5 py-5 rounded-2xl flex flex-col gap-5 w-[60%] bg-[#BAFF66]'>
             <div>
@@ -67,6 +110,7 @@ const Homepage = () => {
             </div>
             <form action="">
               <div className='flex flex-col gap-5'>
+                <ThemeProvider theme={customTheme(outerTheme)}>
                 <div className='flex gap-2 items-baseline'>
                   {/* <label htmlFor="firstname">Firstname</label> */}
                   <TextField 
@@ -91,7 +135,8 @@ const Homepage = () => {
                   onChange={onChangeLastname} 
                   />
                 </div>
-                <div className='flex gap-3'>
+                </ThemeProvider>
+                <div className='flex gap-5 items-baseline'>
                   <label htmlFor="state">Status</label>
                   <div className='flex gap-3 justify-center items-center'>
                     <div className=''>
