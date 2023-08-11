@@ -100,11 +100,11 @@ const Homepage = () => {
     <div className='flex justify-center items-center w-[100vw] h-screen'>
         <div className='h-[100vh] flex justify-center items-center '>
 
-          <div className='border-[5px] border-black flex justify-between w-[700px] h-[500px] rounded-3xl p-3'>
-            <div className='w-[40%] flex justify-center items-center'>
+          <div className='border-[5px] border-black flex justify-between lg:w-[700px] lg:h-[500px] rounded-3xl p-3'>
+            <div className='w-[40%] lg:flex justify-center items-center lg:visible xxsm:hidden'>
               <img src={contactappimg} alt="" />
             </div>
-            <div className='px-5 py-5 rounded-2xl flex flex-col gap-5 w-[60%] bg-[#BAFF66]'>
+            <div className='px-5 py-5 rounded-2xl flex flex-col gap-5 lg:w-[60%] bg-[#BAFF66]'>
             <div>
               <h1 className='text-3xl font-semibold'>Contact Form</h1>
             </div>
