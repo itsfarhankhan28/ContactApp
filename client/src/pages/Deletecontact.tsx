@@ -9,7 +9,7 @@ const Deletecontact = () => {
     const navigatetocontact = useNavigate()
 
     const onDeletecontact = async()=>{
-        const deleteval = await fetch(`https://contactappbackend-7fsw.onrender.com/contact/delete/${id.id}`,{
+        const deleteval = await fetch(`https://contact-sphere-backend.vercel.app/contact/delete/${id.id}`,{
             method:"DELETE"
         })
         console.log(deleteval)

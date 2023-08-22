@@ -72,7 +72,7 @@ const Homepage = () => {
     e.preventDefault()
 
     const contact = {firstname , lastname , state}
-    const res = await fetch('https://contactappbackend-7fsw.onrender.com/contact/create',{
+    const res = await fetch('https://contact-sphere-backend.vercel.app/contact/create',{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
