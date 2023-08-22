@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
-const PORT = 4000
 const mongoose = require('mongoose')
 const router = require('./router/contactrouter')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+require('dotenv').config()
 
 app.use(express.json())
 app.use(bodyParser.json())
@@ -18,7 +18,7 @@ app.get('/',(req,res)=>{
     res.send("This is the home page")
 })
 
-const DB = "mongodb+srv://fk28:farhankhan123@cluster0.fq2ibrs.mongodb.net/"
+const DB = process.env.MONGO_URL
 
 mongoose.connect(DB , {
     useNewUrlParser:true,
@@ -29,6 +29,6 @@ mongoose.connect(DB , {
     console.log("connection unsuccessful")
 })
 
-app.listen(PORT,()=>{
-    console.log(`listening to port ${PORT}`)
+app.listen(process.env.PORT,()=>{
+    console.log(`listening to port ${process.env.PORT}`)
 })
