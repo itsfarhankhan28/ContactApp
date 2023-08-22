@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const router = require('./router/contactrouter')
+const router = require('./api/contactrouter')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 require('dotenv').config()
